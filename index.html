@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            border-radius: 10px;
+            background: #191919;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 90vh; /* 90% da altura da tela */
+            width: 90vw; /* 90% da largura da tela */
+            max-height: 600px; /* Máximo de 600px de altura */
+            max-width: 800px; /* Máximo de 800px de largura */
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-around;
+            height: 50px;
+            width: 150px;
+        }
+
+        button {
+            height: 30px;
+            width: 50px;
+            background: rgb(255, 255, 255);
+            border-radius: 5px;
+            color: blue;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>Quem é o melhor amigo do mundo?</p>
+        <div class="buttons-container">
+            <button>
+                <a href="index2.html" target=”_blank”>Danilo</a>
+            </button>
+            <button id="no">Outra pessoa</button>
+        </div>
+    </div>
+
+    <script>
+        let button = document.getElementById('no');
+        let height = window.innerHeight - 50;
+        let width = window.innerWidth - 50;
+
+        button.addEventListener('mouseover', function () {
+            button.style.position = "absolute";
+            button.style.top = Math.random() * height + "px";
+            button.style.left = Math.random() * width + "px";
+        });
+    </script>
+</body>
+</html>
